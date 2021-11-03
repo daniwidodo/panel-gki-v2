@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('postxes', PostxAPIController::class);
+
+
+
+Route::resource('ibadahs', IbadahAPIController::class);
+
+
+Route::resource('jemaat_v1s', Jemaat_v1APIController::class);
+
+Route::get('ibadahs', function () {
+    $ibadah->relasiIbadahJemaats()->attach($jemaat_v1);
+});
